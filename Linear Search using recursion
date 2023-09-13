@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool linearSearch(int arr[],int k, int n){
+    if(n==0){
+        return false;
+    }
+    if(arr[0]==k){
+        return true;
+    }
+    else{
+        bool ans = linearSearch(arr+1,n-1,k);
+        return ans ;
+    }
+}
+int main(){
+    int arr[5]={2,3,4,5,1};
+    int n=5;
+    int k=4;
+    int ans = linearSearch(arr,n,k);
+    if(ans){
+        cout<<"element is found"<<endl;
+    }
+    else{
+        cout<<"element is not found"<<endl;
+    }
+    return 0;
+}
